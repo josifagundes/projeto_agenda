@@ -10,6 +10,9 @@ class Evento(models.Model):
     data_criacao = models.DateTimeField(auto_now=True)
     usuario = models.ForeignKey(User, on_delete=models.CASCADE)
 
+    def get_data_evento(self):
+        return self.data_evento.strftime('%d/%m/%Y')
+
 #RETORNA O TÍTULO NA CRIAÇÃO DA CLASE
 #    def __str__(self):
 #        return self.titulo
